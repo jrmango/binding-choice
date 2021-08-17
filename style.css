@@ -1,0 +1,26 @@
+<style type=”text/css”>
+ p {
+  text-align: center;
+ }
+ table {
+  width: 100%;
+  border-collapse: collapse;
+ }
+ th {
+  border: 2px solid black;
+  border-top-left-radius: 25 px
+  border-top-right-radius: 25 px
+  padding: 4px;
+ }
+ td {
+  border: 1px solid black;
+  padding: 3px;
+ }
+ td[data-content="Confirmed"] {
+  background-color: green;
+  color: white;
+ }
+ tr:hover{
+  background-color: azure;
+ }
+</style>
