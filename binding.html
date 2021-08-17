@@ -1,0 +1,75 @@
+<!-- Simple HTML template for jinja2 output script -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Interaction Summary Tool</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel='stylesheet' type='text/css' href='./css/style.css'>
+</head>
+<body id="home">
+
+<!--form executes cgi script every time the page is submitted, but only gets data back when there are queries >
+
+<h1>Binding Boundary Lookup Tool</h1>
+
+ <form name='search_genes' method='post' action='./urparser.cgi' >
+
+ <label for="accession">Please input UniProt reference</label>
+ <input id="accession" type="text" name="accession" placeholder="P35355">
+ <input id="smilesid" type="text" name="smilesid" placeholder="SMILES struct or blank">
+ <input type="submit" value="Submit">
+
+ </form>
+</body>
+<p>
+  Accession
+</p>
+<p>
+  Descriptive Name
+</p>
+<p>
+  UniProt Reference
+</p>
+<table>
+  <tr>
+    <th>Ligand Monomer ID</th>
+	<th>Ligand SMILES</th>
+    <th>Uniref 90 ID</th>
+	<th>UniProt Number</th>
+	<th>UniProt Name</th>
+    <th>Documented Binding?</th>
+  </tr>
+  {% for key < 100%}
+  <tr>
+     {% if {MID[key]} %}
+         <td>{{URID[key]}}</td>
+     {% else %}
+         <td>--</td>
+     {% if {IAID[key]} %}
+         <td>{{URID[key]}}</td>
+     {% else %}
+         <td>--</td>
+     {% if {URID[key]} %}
+         <td>{{URID[key]}}</td>
+     {% else %}
+         <td>--</td>
+     {% if {URNUM[key]} %}
+         <td>{{URID[key]}}</td>
+     {% else %}
+         <td>--</td>
+     {% if {URNAME[key]} %}
+         <td>{{URID[key]}}</td>
+     {% else %}
+         <td>--</td>
+     {% if {matches[key]} %}
+     {% if {matches[key]} = 1 %}
+         <td data-content="Confirmed">Confirmed</td>
+     {% else %}
+         <td>Unconfirmed</td>      
+  </tr>          
+  {% endfor %}
+</table>
+</html>
